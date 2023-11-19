@@ -1,0 +1,15 @@
+.pdfContainer {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 40%;
+    transition: transform 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  .pdfContainer:hover {
+    transform: scale(1.01);
+  }
+
+
+  

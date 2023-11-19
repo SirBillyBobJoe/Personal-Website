@@ -1,0 +1,73 @@
+/* Add this line to your HTML to use Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.container {
+    font-family: 'Roboto', sans-serif;
+    max-width: 800px;
+    border: 1px solid #2c3e50; 
+    background-color: #ecf0f1; 
+    margin: 40px auto; 
+    padding: 20px;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 5%;
+    transition: 0.3s ease all
+  }
+
+  .container:hover{
+    transform:scale(1.01);
+  }
+
+.p,.ul {
+    margin-bottom: 15px;
+}
+
+.p {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0056b3;
+
+}
+
+.li {
+    font-size: 16px;
+    line-height: 1.6;
+
+}
+
+.ul {
+    list-style-type: none;
+
+    padding-left: 0;
+}
+
+.li::before {
+    content: '• ';
+
+    color: #0056b3;
+
+    font-weight: bold;
+
+    display: inline-block;
+
+
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .p {
+        font-size: 16px;
+    }
+
+    .li {
+        font-size: 14px;
+    }
+}

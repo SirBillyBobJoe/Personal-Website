@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+.container {
+    flex-basis: 50%;
+    border: solid black 3px;
+    margin: 5px;
+    padding: 10px;
+    background-color: #ecf0f1;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.container:hover{
+    transform:scale(1.01)
+}
+
+.body h2{
+    color: #4a90e2;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.h1 {
+    color: #0056b3;
+    font-weight: 1000;
+    display: flex;
+    justify-content: center;
+}
+
+.body{
+    display: flex;
+    justify-content: space-between;
+}
+
+.pfp{
+    border-radius: 40px;
+    transition: ease all 0.3s;
+    margin: 10px
+}
+
+.pfp:hover{
+    transform: scale(1.02);
+}
+
+.container p {
+    color: #333; /* Softer than pure black for modern design */
+    font-family: 'Open Sans', sans-serif; /* Modern, clean font */
+    font-size: 17px; /* Slightly larger for distinction */
+    font-weight: 400; /* Default weight for body text */
+    line-height: 1.8; /* Generous line height for readability */
+    letter-spacing: 0.5px; /* Slightly increased for elegance */
+    text-align: justify; /* Justify align for clean edges */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Soft shadow for depth */
+    margin-right: 20px;
+    padding: 10px 0; /* Space above and below the text */
+}
+
+.container strong {
+    font-weight: 600; /* Bolder for emphasis */
+    color: #0056b3; /* A color that matches your headings for consistency */
+}

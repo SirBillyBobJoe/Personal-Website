@@ -1,0 +1,76 @@
+.navbarContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #003973, #e5e5be);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 165px;
+    border-radius: 50px;
+    padding: 0 20px; 
+    transition: all 0.3s ease;
+    margin: 20px;
+}
+
+.navbarContainer:hover {
+    transform:scale(1.01)
+}
+
+.menuContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+.menuButton {
+    transition: all 0.3s ease;
+    position: relative;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 1000;
+    font-size: 32px;
+    color: #E0EFFF;
+}
+
+.menuButton::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #f4d03f;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.menuButton:hover, .menuButton:focus {
+    transform: scale(1.05);
+    color: #f4d03f; 
+    background-color: rgba(255, 255, 255, 0.1); 
+    outline: none;
+}
+
+.menuButton:hover::after, .menuButton:focus::after {
+    width: 100%; 
+}
+
+.menuButton:active {
+    font-weight: bold;
+}
+
+
+.pfp {
+    margin: 10px;
+    width: 140px; 
+    height: 140px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    
+}
+
+.pfp:hover {
+    transform: scale(1.1);
+}

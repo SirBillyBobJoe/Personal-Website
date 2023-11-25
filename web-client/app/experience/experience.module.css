@@ -1,19 +1,28 @@
+@keyframes slideRight {
+  0% {
+      transform: translateY(100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0%);
+      opacity: 1;
+  }
+}
+
+
 .container {
     border: solid black 3px;
     margin: 15px;
     padding: 10px;
     background-color: #ecf0f1;
     border-radius: 50px;
-    transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    animation: slideRight 1s ease-out forwards;
 }
 
-.container:hover {
-    transform: scale(1.01)
-}
 
 .h1 {
     color: #0056b3;
@@ -31,6 +40,11 @@
     display: flex;
     align-items: center;
 }
+.container a {
+  text-decoration: none;
+  color: inherit; 
+}
+
 
 .experience {
     justify-content: center;
@@ -81,3 +95,66 @@
     padding: 10px 0;
     /* Space above and below the text */
 }
+
+.experience img{
+    width: 100px;
+    height: 100px;
+}
+
+
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 768px) {
+    .container {
+      margin: 10px;
+      padding: 8px;
+      border-radius: 25px; /* Slightly reduce border-radius for a more compact look */
+    }
+  
+    .container h3, .experience h3 {
+      font-size: 20px; /* Reduce font size for smaller screens */
+    }
+  
+    .experience {
+      font-size: 25px; /* Adjust font size */
+      margin-bottom: 15px;
+      margin-left: 5px;
+      width: 95%; /* Increase width to better fit mobile screens */
+    }
+  
+    .experience img {
+      width: 80px; /* Adjust image size */
+      height: 80px;
+    }
+  
+    .experience p {
+      font-size: 15px; /* Adjust font size for readability */
+      margin-right: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      border-radius: 20px; /* Further reduce border-radius for very small screens */
+    }
+  
+    .container h3, .experience h3 {
+      font-size: 18px; /* Further reduce font size for very small screens */
+    }
+  
+    .experience {
+      font-size: 20px; /* Adjust font size */
+      margin-bottom: 10px;
+      width: 100%; /* Use full width for very small screens */
+    }
+  
+    .experience img {
+      width: 70px; /* Further adjust image size */
+      height: 70px;
+    }
+  
+    .experience p {
+      font-size: 14px; /* Further adjust font size for very small screens */
+    }
+  }
+  

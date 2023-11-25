@@ -1,62 +1,67 @@
 import styles from './page.module.css'
+
 export default function Achievements() {
+    const topInCourses = [
+        "SOFTENG 281: Object-Oriented Programming",
+        "ELECTENG 101: Electrical and Digital Systems",
+        "CHEMMAT 121: Materials Science",
+        "ENGGEN 131: Introduction to Engineering Computation and Software Development"
+    ];
+
+    const deansHonoursList = ["2022", "2023"];
+
+    const cieExamResults = {
+        "2020": ["AS Level Mathematics: A+", "AS Level Physics: A+"],
+        "2021": ["A Level Mathematics: A+", "A Level Physics: A+", "AS Level English: A", "AS Level Chemistry: A"]
+    };
+
+    const mathCompetitions = {
+        "University of Otago Maths Competition": ["2018 - Top 30", "2019 - Top 30", "2020 - Top 30"],
+        "UNSW ICAS": ["2018 Maths - High Distinction", "2019 Maths - High Distinction"],
+        "Mathex": ["2018 - 3rd Place", "2019 - 3rd Place"]
+    };
+
     return (
-        <div className={styles.container}>
-            <p className={styles.p}>University Of Auckland GPA: 9.0</p>
+        <div className={styles.largeContainer}>
+            <div className={styles.container}>
+                <p className={styles.p}>University Of Auckland GPA: 9.0</p>
 
-            <p className={styles.p}>Top In Course:</p>
-
-            <ul className={styles.ul}>
-                <li className={styles.li}> SOFTENG 281: Object-Oriented Programming</li>
-                <li className={styles.li}>ELECTENG 101: Electrical and Digital Systems</li>
-                <li className={styles.li}> CHEMMAT 121: Materials Science</li>
-                <li className={styles.li}>ENGGEN 131: Introduction to Engineering Computation and Software Development</li>
-            </ul>
-
-            <p className={styles.p}>Dean's Honours List:</p>
-            <ul className={styles.ul}>
-                <li className={styles.li}>2022</li>
-                <li className={styles.li}>2023</li>
-            </ul>
-
-            <p className={styles.p}>CIE Exam Results:</p>
-            <div>
-                <ul className={styles.ul}>2020:
-                    <ul className={styles.ul}>
-                        <li className={styles.li}>AS Level Mathematics: A+</li>
-                        <li className={styles.li}>AS Level Physics: A+</li>
-                    </ul>
+                <p className={styles.p}>Top In Course:</p>
+                <ul className={styles.ul}>
+                    {topInCourses.map((course, index) => (
+                        <li key={index} className={styles.li}>{course}</li>
+                    ))}
                 </ul>
-                <ul className={styles.ul}>2021:
-                    <ul className={styles.ul}>
-                        <li className={styles.li}>A Level Mathematics: A+</li>
-                        <li className={styles.li}>A Level Physics: A+</li>
-                        <li className={styles.li}>AS Level English: A</li>
-                        <li className={styles.li}>AS Level Chemistry: A</li>
-                    </ul>
+
+                <p className={styles.p}>Dean's Honours List:</p>
+                <ul className={styles.ul}>
+                    {deansHonoursList.map((year, index) => (
+                        <li key={index} className={styles.li}>{year}</li>
+                    ))}
                 </ul>
+
+                <p className={styles.p}>CIE Exam Results:</p>
+                <div>
+                    {Object.entries(cieExamResults).map(([year, results], index) => (
+                        <ul key={index} className={styles.ul}>{year}:
+                            {results.map((result, resultIndex) => (
+                                <li key={resultIndex} className={styles.li}>{result}</li>
+                            ))}
+                        </ul>
+                    ))}
+                </div>
+
+                {Object.entries(mathCompetitions).map(([competition, results], index) => (
+                    <div key={index}>
+                        <p className={styles.p}>{competition}:</p>
+                        <ul className={styles.ul}>
+                            {results.map((result, resultIndex) => (
+                                <li key={resultIndex} className={styles.li}>{result}</li>
+                            ))}
+                        </ul>
+                    </div>
+                ))}
             </div>
-
-            <p className={styles.p}>University of Otago Maths Competition:</p>
-            <ul className={styles.ul}>
-                <li className={styles.li}>2018 - Top 30</li>
-                <li className={styles.li}>2019 - Top 30</li>
-                <li className={styles.li}>2020 - Top 30</li>
-            </ul>
-
-            <p className={styles.p}>UNSW ICAS:</p>
-            <ul className={styles.ul}>
-                <li className={styles.li}>2018 Maths - High Distinction</li>
-                <li className={styles.li}>2019 Maths - High Distinction</li>
-
-            </ul>
-
-            <p className={styles.p}>Mathex:</p>
-            <ul className={styles.ul}>
-                <li className={styles.li}>2018 - 3rd Place</li>
-                <li className={styles.li}>2019 - 3rd Place</li>
-            </ul>
-
         </div>
-    )
+    );
 }

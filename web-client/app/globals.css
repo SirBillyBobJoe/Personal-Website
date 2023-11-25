@@ -1,13 +1,30 @@
 html {
-    height: 100%;
-  }
-  
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: linear-gradient(to bottom right, #00416A, #E4E5E6);
+  background-attachment: fixed;
+  /* This will make sure the background is fixed during scroll */
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 768px) {
   body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background: linear-gradient(to bottom right, #00416A, #E4E5E6);
-    background-attachment: fixed; /* This will make sure the background is fixed during scroll */
-    font-family: 'Roboto', sans-serif;
+    /* Adjust font size for readability on smaller screens if necessary */
+    font-size: 15px;
+    /* Example size, adjust as needed */
   }
-  
+}
+
+@media (max-width: 480px) {
+  body {
+    /* Further reduce font size for very small screens */
+    font-size: 14px;
+    /* Example size, adjust as needed */
+  }
+}

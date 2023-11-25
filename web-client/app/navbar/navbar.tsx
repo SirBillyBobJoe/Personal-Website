@@ -2,43 +2,28 @@
 import styles from './navbar.module.css'
 
 export default function Navbar() {
-  const handleContact = () => {
-    window.location.href = '/contact';
-  }
-  const handleAchievements = () => {
-    window.location.href = '/achievements';
-  }
-  const handleTranscript = () => {
-    window.location.href = '/transcript';
-  }
-  const handleResume = () => {
-    window.location.href = '/resume';
-  }
-  const handleProjects = () => {
-    window.location.href = '/project';
-  }
-  const handleHome = () => {
-    window.location.href = '/';
+  const navigationItems = [
+    { label: 'Projects', path: '/project' },
+    { label: 'Achievements', path: '/achievements' },
+    { label: 'Résumé', path: '/resume' },
+    { label: 'Transcript', path: '/transcript' },
+    { label: 'Contact', path: '/contact' }
+  ];
+
+  const navigateTo = (path:string) => {
+    window.location.href = path;
   }
 
   return (
     <div className={styles.navbarContainer}>
-      <span>
-        <img className={styles.pfp} src="./logo.png" onClick={handleHome}></img>
-      </span>
-      
-      <span className={styles.menuContainer}>
-
-      <button onClick={handleProjects} className={styles.menuButton}>Projects</button>
-
-        <button onClick={handleResume} className={styles.menuButton}>Résumé</button>
-
-        <button onClick={handleTranscript} className={styles.menuButton}>Transcript</button>
-
-        <button onClick={handleAchievements} className={styles.menuButton}>Achievements</button>
-        
-        <button onClick={handleContact} className={styles.menuButton}>Contact</button>
-      </span>
+      <div className={styles.menuContainer}>
+      <img src="logo.png" onClick={() => navigateTo("/") }className={styles.pfp}/>
+        {navigationItems.map((item, index) => (
+          <button key={index} onClick={() => navigateTo(item.path)} className={styles.menuButton}>
+            {item.label}
+          </button>
+        ))}
+      </div>
     </div>
   )
 }

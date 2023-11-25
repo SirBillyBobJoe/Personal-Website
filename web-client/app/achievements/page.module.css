@@ -1,18 +1,47 @@
 /* Add this line to your HTML to use Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@keyframes popOut {
+    0% {
+        transform: scale(0%);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(100%);
+        opacity: 1;
+    }
+  }
+
+  @keyframes swipeLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+  }
+  
 
 .container {
     font-family: 'Roboto', sans-serif;
     max-width: 800px;
-    border: 1px solid #2c3e50; 
+    border: 3px solid black; 
     background-color: #ecf0f1; 
     margin: 40px auto; 
     padding: 20px;
     color: #333;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     border-radius: 5%;
-    transition: 0.3s ease all
+    transition: 0.3s ease all;
+    animation: popOut 1s ease-out forwards;
   }
+  .p,.ul,.li{
+    opacity: 0; 
+    animation:swipeLeft 0.5s ease-out forwards;
+    animation-delay: 0.2s;
+  }
+
 
   .container:hover{
     transform:scale(1.01);
@@ -53,21 +82,30 @@
 
 }
 
-
-
-
-
 @media (max-width: 768px) {
     .container {
+        max-width: 100%; /* Full width on smaller screens */
         padding: 10px;
-        font-size: 16px;
+        margin: 20px auto; /* Reduced margin for tighter spaces */
+        font-size: 16px; /* Adjust font size for readability */
     }
 
     .p {
-        font-size: 16px;
+        font-size: 16px; /* Consistent font size with the container */
     }
 
     .li {
-        font-size: 14px;
+        font-size: 14px; /* Slightly smaller font size for list items */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        max-width: 90%; /* Allow some margin on very small screens */
+        padding: 5px; /* Further reduced padding */
+    }
+
+    .p, .li {
+        font-size: 15px; /* Adjust font size for very small screens */
     }
 }

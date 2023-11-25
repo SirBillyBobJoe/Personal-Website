@@ -1,8 +1,19 @@
+@keyframes popOut {
+  0% {
+      transform: scale(0);
+      opacity: 0;
+  }
+  100% {
+      transform: scale(100%);
+      opacity: 1;
+  }
+}
 .sendContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  animation: popOut 0.5s ease-out forwards;
 }
 
 .h1{
@@ -21,12 +32,10 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  transition: transform 0.3s ease;
   background-color: #ecf0f1;
+  border: solid black 3px;
 }
-.sendForm:hover{
-  transform: scale(1.02);
-}
+
 
 .label {
   align-self: flex-start;
@@ -36,7 +45,7 @@
 
 .input:hover,
 .textarea:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
   border: 2px solid #000000;
   outline: none;
 }
@@ -63,23 +72,59 @@
 
 .button {
   padding: 10px 20px;
-  border: none;
   border-radius: 20px;
   background-color: #4db8ac; 
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 
 .button:hover {
   background-color: #39897a; 
-  transform: scale(1.05)
+  transform: scale(1.05);
+  border:solid black 3px;
 }
 
-/* Adjust the below media query as necessary for responsive design */
-@media (max-width: 600px) {
-  .uploadForm {
-    width: 90%;
+
+
+/* Existing styles */
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 768px) {
+  .sendContainer {
+    padding: 15px; /* Slightly reduce padding for smaller screens */
   }
+
+  .sendForm {
+    max-width: 90%; /* Allow the form to expand to full width */
+    padding: 20px; /* Slightly reduce padding */
+    margin-top: 15px; /* Adjust top margin */
+  }
+
+  .input, .textarea {
+    margin-bottom: 15px; /* Adjust spacing between inputs */
+    width: 95%;
+  }
+
+  .button {
+    padding: 8px 15px; /* Adjust button size for easier tapping */
+  }
+}
+
+@media (max-width: 480px) {
+  .sendForm {
+    padding: 15px; /* Further reduce padding for very small screens */
+  }
+
+  .input, .textarea {
+    padding: 8px; /* Smaller padding for a more compact look */
+    font-size: 14px; /* Slightly smaller font size for better fit on screen */
+    border-radius: 2px; /* Reduce the border-radius for a more streamlined look */
+    border: 1px solid #bbb; /* Lighter border for a softer appearance */
+    width: 95%;
+}
+
+
+  /* Any other specific adjustments for very small screens can be added here */
 }

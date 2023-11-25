@@ -7,12 +7,7 @@
     height: 165px;
     border-radius: 50px;
     padding: 0 20px; 
-    transition: all 0.3s ease;
     margin: 20px;
-}
-
-.navbarContainer:hover {
-    transform:scale(1.01)
 }
 
 .menuContainer {
@@ -67,10 +62,58 @@
     height: 140px;
     border-radius: 50%;
     cursor: pointer;
-    transition: transform 0.3s ease;
-    
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add box-shadow to the transition */
+    box-shadow: 0 0 0 0px #f4d03f; /* Initial state with no visible shadow */
 }
 
 .pfp:hover {
     transform: scale(1.1);
+    box-shadow: 0 0 0 2px #f4d03f; /* Shadow acts as a border on hover */
+}
+
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 768px) {
+    .navbarContainer {
+        height: 120px; /* Reduce height for medium screens */
+        border-radius: 30px; /* Adjust border-radius */
+        padding: 0 15px; /* Adjust padding */
+        margin: 10px; /* Adjust margin */
+    }
+
+    .menuButton {
+        font-size: 24px; /* Reduce font size for better fit */
+    }
+
+    .pfp {
+        width: 100px; /* Adjust profile picture size */
+        height: 100px;
+    }
+}
+@media (max-width: 480px) {
+    .navbarContainer {
+        flex-direction: column; /* Stack items vertically for small screens */
+        height: auto; /* Adjust height to fit content */
+        padding: 10px 5px; /* Further reduce padding */
+    }
+
+    .menuContainer {
+        flex-direction: column; /* Change to stack menu items vertically */
+        align-items: center; /* Center align the buttons */
+        margin-top: 10px; /* Add some space between navbar and menu items */
+        flex-wrap: wrap;
+    }
+
+    .menuButton {
+        font-size: 18px; /* Reduce the font size a bit more */
+        font-weight: 700; /* Try reducing font weight */
+        padding: 5px; /* Adjust padding */
+        margin: 5px; /* Ensure there's space around buttons */
+    }
+
+    .pfp {
+        width: 80px; /* Further adjust profile picture size */
+        height: 80px;
+        margin-bottom: 10px; /* Add space below the profile picture */
+    }
 }

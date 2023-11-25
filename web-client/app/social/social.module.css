@@ -1,3 +1,15 @@
+@keyframes slideRight {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+
 .container {
     flex-basis: 33%;
     border: solid black 3px;
@@ -5,16 +17,14 @@
     padding: 10px;
     background-color: #ecf0f1;
     border-radius: 50px;
-    transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    animation: slideRight 1s ease-out forwards;
 }
 
-.container:hover{
-    transform:scale(1.01)
-}
+
 
 .h1 {
     color: #0056b3;
@@ -43,11 +53,56 @@
     cursor: pointer;
 }
 
+
+
 .img{
     margin-right: 10px;
+    height: 70px;
+    width: 70px;
 }
 /* Link Styling */
 .container a {
     text-decoration: none;
     color: inherit; 
+}
+
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 768px) {
+    .container {
+        flex-basis: 50%; /* Increase width on medium screens */
+        margin: 10px; /* Adjust margin */
+        padding: 8px; /* Adjust padding */
+        border-radius: 25px; /* Adjust border-radius for a more compact look */
+    }
+
+    .socialLink {
+        font-size: 25px; /* Adjust font size */
+        width: 300px; /* Adjust width */
+        margin-bottom: 15px;
+        margin-left: 5px;
+    }
+
+    .img {
+        height: 60px; /* Adjust image size */
+        width: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        flex-basis: 100%; /* Use full width on small screens */
+        margin: 5px; /* Further adjust margin */
+        padding: 5px; /* Further adjust padding */
+    }
+
+    .socialLink {
+        font-size: 20px; /* Further reduce font size */
+        width: 250px; /* Further adjust width */
+    }
+
+    .img {
+        height: 50px; /* Further adjust image size */
+        width: 50px;
+    }
 }

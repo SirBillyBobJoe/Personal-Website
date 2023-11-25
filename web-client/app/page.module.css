@@ -8,3 +8,30 @@
 .container2{
     width: 50%;
 }
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack items vertically on medium screens */
+        align-items: center; /* Center items when stacked */
+    }
+
+    .container2 {
+        width: 70%; /* Increase width for better visibility on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: center; /* Center items when stacked */
+        margin-top: 5px; /* Adjust top margin for compact spacing */
+        padding: 5px; /* Add or adjust padding for better spacing */
+    }
+
+    .container2 {
+        width: 90%; /* Further increase width to utilize more screen space on small screens */
+        margin: 0 auto; /* Center the container for better alignment */
+        padding: 5px; /* Add padding for consistent spacing */
+    }
+}

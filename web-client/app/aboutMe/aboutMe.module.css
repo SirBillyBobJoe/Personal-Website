@@ -1,18 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+
 .container {
     flex-basis: 50%;
     border: solid black 3px;
-    margin: 5px;
+    margin: 20px;
     padding: 10px;
     background-color: #ecf0f1;
     border-radius: 50px;
-    transition: all 0.3s ease;
+    animation: slideRight 1s ease-out forwards;
 }
 
-.container:hover{
-    transform:scale(1.01)
-}
+
 
 .body h2{
     color: #4a90e2;
@@ -34,13 +44,9 @@
 
 .pfp{
     border-radius: 40px;
-    transition: ease all 0.3s;
     margin: 10px
 }
 
-.pfp:hover{
-    transform: scale(1.02);
-}
 
 .container p {
     color: #333; /* Softer than pure black for modern design */
@@ -58,4 +64,38 @@
 .container strong {
     font-weight: 600; /* Bolder for emphasis */
     color: #0056b3; /* A color that matches your headings for consistency */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-basis: 100%; /* Take full width on smaller screens */
+        margin: 10px; /* Reduce margin */
+        padding: 5px; /* Reduce padding */
+    }
+
+    .body {
+        flex-direction: column; /* Stack elements vertically */
+        justify-content: center; /* Center align vertically */
+    }
+
+    .body h2 {
+        font-size: 20px; /* Reduce font size for smaller screens */
+    }
+
+    .container p {
+        font-size: 15px; /* Slightly smaller font size for mobile */
+        text-align: left; /* Align text to the left for readability */
+    }
+}
+
+@media (max-width: 480px) {
+    .h1 {
+        font-size: 20px; /* Further reduce heading size for very small screens */
+    }
+
+    .pfp {
+        width: 60%; /* Adjust image width */
+        margin: 0 auto; /* Center the image */
+    }
 }
